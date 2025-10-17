@@ -1,0 +1,29 @@
+name: Httpbun
+package: community.lazycat.app.httpbun
+version: 0.1.0
+min_os_version: 1.3.8
+description: 这是一个带有端点的 HTTP 服务，在测试任何 HTTP 客户端（例如浏览器、库或任何 API 开发工具）时非常有用。它深受 httpbin 的启发
+homepage: https://github.com/sharat87/httpbun
+author: sharat87
+application:
+  subdomain: httpbun
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://httpbun:80/
+
+services:
+  httpbun:
+    container_name: httpbun
+    #  sharat87/httpbun:latest
+    image: registry.lazycat.cloud/czyt/sharat87/httpbun:276d9c906264359f
+
+locales:
+  zh:
+    name: "Httpbun"
+    description: "这是一个带有端点的 HTTP 服务，在测试任何 HTTP 客户端（例如浏览器、库或任何 API 开发工具）时非常有用。它深受 httpbin 的启发"
+  en:
+    name: "Httpbun"
+    description: "This is an HTTP service with endpoints that are useful when testing any HTTP client, like a browser, a library, or any API developer tool. It's heavily inspired by httpbin."
