@@ -1,0 +1,41 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/httpbun.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: httpbun
+    bump: patch
+
+build:
+  run_buildscript: false
+
+images:
+  - id: httpbun
+    target: service
+    service: httpbun
+    source: sharat87/httpbun
+    channel: custom
+    sort: created
+    tag_regex: '^latest$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Httpbun
+    summary: "一个带有端点的 HTTP 服务，在测试任何 HTTP 客户端时非常有用"
