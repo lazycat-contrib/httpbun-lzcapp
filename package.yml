@@ -1,4 +1,5 @@
 package: community.lazycat.app.httpbun
+license: Apache-2.0
 version: 0.1.2
 name: Httpbun
 description: "这是一个带有端点的 HTTP 服务，在测试任何 HTTP 客户端（例如浏览器、库或任何 API 开发工具）时非常有用。它深受 httpbin 的启发"
