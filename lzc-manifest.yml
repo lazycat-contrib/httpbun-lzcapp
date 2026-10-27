@@ -8,5 +8,5 @@ application:
       backend: http://httpbun:80/
 services:
   httpbun:
-    # upstream: sharat87/httpbun:latest@sha256:43b60cde6e4227b9269e6f8370e9e506918df811c9ea7bdd012bc10ec1f0bbb0
-    image: registry.lazycat.cloud/czyt/sharat87/httpbun:27c9b8d9f488ce14
+    # upstream: sharat87/httpbun:latest@sha256:1cb150addc436f9862db2f76df2acb18a14f2d03287c35a5f2a7c43c7218ae8a
+    image: registry.lazycat.cloud/czyt/sharat87/httpbun:937f63282df511fd
